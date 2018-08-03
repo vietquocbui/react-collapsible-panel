@@ -131,8 +131,8 @@
     };
 
     Panel.propTypes = {
-        defaultExpanding: PropTypes.bool,
         collapsible: PropTypes.bool,
+        defaultExpanding: PropTypes.bool,
         showIcon: PropTypes.bool
     };
 
@@ -192,12 +192,12 @@
                         React.createElement(
                             LaPanelHeader,
                             null,
-                            'This is title'
+                            'This panel has disabled collapsible'
                         ),
                         React.createElement(
                             LaPanelBody,
                             null,
-                            'This body'
+                            'Panel body is expanded by default'
                         )
                     ),
                     React.createElement(
@@ -206,7 +206,7 @@
                         React.createElement(
                             LaPanelHeader,
                             null,
-                            'This is title'
+                            'This panel is collapsible'
                         ),
                         React.createElement(
                             LaPanelBody,

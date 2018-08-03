@@ -134,8 +134,8 @@
     };
 
     Panel.propTypes = {
-        defaultExpanding: PropTypes.bool,
         collapsible: PropTypes.bool,
+        defaultExpanding: PropTypes.bool,
         showIcon: PropTypes.bool
     };
 
