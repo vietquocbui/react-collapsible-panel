@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/react-collapsible-panel.dev.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vietquocbui/react-collapsible-panel.git"
+  },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "eslint .",
     "build": "npm run build:dev && npm run build:pro && npm run build:example && npm run build:scss",
     "build:pro": "rollup -c --environment entry:pro",
@@ -12,9 +16,9 @@
     "build:example": "rollup -c --environment entry:example",
     "build:scss": "babel-node build-scss.js"
   },
-  "jest":{
-	  "verbose": true,
-	  "testURL": "http://localhost/"
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
   },
   "babel": {
     "plugins": [
@@ -36,6 +40,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "coveralls": "^3.0.2",
     "eslint": "^5.2.0",
     "eslint-plugin-react": "^7.10.0",
     "jest": "^23.4.0",
