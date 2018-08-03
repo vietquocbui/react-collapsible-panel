@@ -12,6 +12,10 @@
     "build:example": "rollup -c --environment entry:example",
     "build:scss": "babel-node build-scss.js"
   },
+  "jest":{
+	  "verbose": true,
+	  "testURL": "http://localhost/"
+  },
   "babel": {
     "plugins": [
       "transform-object-rest-spread"
