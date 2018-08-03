@@ -2,18 +2,18 @@
   "name": "react-collapsible-panel",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/react-collapsible-panel.dev.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/vietquocbui/react-collapsible-panel.git"
   },
   "scripts": {
-    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test": "jest --coverage",
     "lint": "eslint .",
     "build": "npm run build:dev && npm run build:pro && npm run build:example && npm run build:scss",
-    "build:pro": "rollup -c --environment entry:pro",
-    "build:dev": "rollup -c --environment entry:dev",
-    "build:example": "rollup -c --environment entry:example",
+    "build:pro": "rollup -c --environment NODE_ENV:production",
+    "build:dev": "rollup -c --environment NODE_ENV:development",
+    "build:example": "rollup -c --environment NODE_ENV:example",
     "build:scss": "babel-node build-scss.js"
   },
   "jest": {
@@ -50,7 +50,10 @@
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-babel-minify": "^5.0.0",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup-plugin-commonjs": "^9.1.4",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "react-collapsible-panel":"1.0.0"
   },
   "dependencies": {
     "prop-types": "^15.6.0",

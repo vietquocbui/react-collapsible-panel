@@ -1,5 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
+import replace from 'rollup-plugin-replace';
 
 export default () => {
   const scss = {
@@ -15,12 +17,15 @@ export default () => {
       name: 'example',
       globals: {
         "react": 'React',
+        "react-dom": 'ReactDOM',
         "prop-types": 'PropTypes'
       }
     },
-    external: ['react', 'prop-types'],
+    external: ['react', 'prop-types', 'react-dom'],
     plugins: [
-      resolve(),
+      resolve({ jsnext: true, main: true }),
+      replace({ "process.env.NODE_ENV": JSON.stringify('production') }),
+      commonjs({ include: 'node_modules/**', sourceMap: false }),
       babel({
         babelrc: false,
         presets: ['react', ['env', { modules: false }]],
