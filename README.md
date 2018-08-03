@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/vietquocbui/react-collapsible-panel.svg?branch=master)](https://travis-ci.org/vietquocbui/react-collapsible-panel)
 [![Coverage Status](https://coveralls.io/repos/github/vietquocbui/react-collapsible-panel/badge.svg)](https://coveralls.io/github/vietquocbui/react-collapsible-panel)
+
 React Collapsible Panel
 =======
 ## Default props
